@@ -16,6 +16,57 @@
   <a href="https://github.com/TauricResearch" target="_blank"><img alt="TradingAgents #1 Repository of the Day" src="https://trendshift.io/api/badge/repositories/16192" width="250" height="55"/></a>
 </div>
 
+---
+
+## FTEC5660 Individual Project: Reproducibility Study & Optimization
+- **Course:** FTEC5660 Agentic AI for Business and FinTech (CUHK MSc FinTech)
+- **Author:** Cheng Ho Long (SID: 1155273628)
+- **Paper:** *TradingAgents: Multi-Agents LLM Financial Trading Framework* (arXiv:2412.20138)
+- **Target Asset & Date:** AAPL (Apple Inc.), March 25, 2024 (Table 1 Capital Preservation Verification)
+
+### Quickstart: Reproduction & Run Steps
+
+#### 1. Environment Setup
+```bash
+# Clone this fork
+git clone https://github.com/LeonHLCheng/TradingAgents.git
+cd TradingAgents
+
+# Create and activate Conda environment (Python 3.13)
+conda create -n tradingagents-py312 python=3.13 -y
+conda activate tradingagents-py312
+
+# Install dependencies and editable package
+pip install -e .
+```
+
+#### 2. Configuration (`.env`)
+Create a `.env` file in the root directory:
+```bash
+TRADINGAGENTS_LLM_PROVIDER=deepseek
+TRADINGAGENTS_LLM_BACKEND_URL=https://www.moyu.cn/v1
+TRADINGAGENTS_DEEP_THINK_LLM=DeepSeek-V4.1-flash
+TRADINGAGENTS_QUICK_THINK_LLM=DeepSeek-V4.1-flash
+DEEPSEEK_API_KEY=your_api_key_here
+```
+
+#### 3. Single-Command Reproduction Execution
+Run the baseline or optimized trading simulation:
+```bash
+tradingagents --ticker AAPL --date 2024-03-25
+```
+
+### Summary of Author Contributions & Commits
+All modifications are cleanly isolated in commit history (no monolithic code dumps):
+* **Isolated Commit:** [`a87f2d0b7`](https://github.com/LeonHLCheng/TradingAgents/commit/a87f2d0b7507519b42fbc0b94b472b896709b773)
+  * Target files: `tradingagents/agents/risk_mgmt/aggressive_debator.py`, `conservative_debator.py`, `neutral_debator.py`.
+  * **Turn-level Prompt Density Bounding:** Enforced 500 to 800 word density limits, stripping conversational filler and textbook definitions.
+  * **Turn 1 Anti-Hallucination Guardrail:** Prevented the Aggressive Analyst from debating non-existent peer arguments on Turn 1.
+  * **Risk Debate Round Truncation:** Proved that 3 risk debate rounds achieve full mathematical consensus, cutting redundant turns.
+  * **Measured Performance:** Reduced tokens from 876,773 to 553,153 (**-36.9% average / -43.9% peak**), cut execution latency from 27.3 min to 17.0 min (**-37.7% speedup**), while maintaining 100% defensive decision accuracy.
+
+---
+
 ## Latest: [Trading-R1](https://github.com/TauricResearch/Trading-R1) is now in early access
 
 After so many requests from the community, Trading-R1 has officially launched!
