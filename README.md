@@ -16,11 +16,6 @@
   <a href="https://github.com/TauricResearch" target="_blank"><img alt="TradingAgents #1 Repository of the Day" src="https://trendshift.io/api/badge/repositories/16192" width="250" height="55"/></a>
 </div>
 
-> 🎓 **CUHK MSc FinTech (FTEC5660) Individual Project:**
-> For the complete course submission documentation, installation steps, single-command reproduction instructions, and commit audit, please see the dedicated **[FTEC5660 Reproduction & Quickstart Guide](REPRODUCTION_GUIDE.md)**.
-> - **Author:** Cheng Ho Long (SID: 1155273628)
-> - **Primary Optimization Commit:** [`a87f2d0b7`](https://github.com/LeonHLCheng/TradingAgents/commit/a87f2d0b7507519b42fbc0b94b472b896709b773) (Prompt density bounding and round truncation delivering -36.9% tokens, -37.7% latency speedup)
-
 ## Latest: [Trading-R1](https://github.com/TauricResearch/Trading-R1) is now in early access
 
 After so many requests from the community, Trading-R1 has officially launched!
